@@ -69,7 +69,7 @@ public class ConfrontoController {
     }
 
     @PostMapping("/monstro/kaiju")
-    public ResponseEntity addMonstro(@RequestBody Kaiju k) {
+    public ResponseEntity addKaiju(@RequestBody Kaiju k) {
         lista.add(k);
         return ResponseEntity.status(201).build();
 
@@ -134,7 +134,7 @@ public class ConfrontoController {
             System.out.println(String.format("\n O Meu Deus há um monstro aterrorizante na cidade" +
                     " O governo Classificou ele como um monstro Categoria: %d  ... \n estamos perdidos ooooh apareceu um Jaeger para" +
                     " nos defender o nome dele é  %s com os " +
-                    "pilotos  %s e %s  será se estamos a salvo? \n\n O Combate começa entre o Monstro e o Heroi ", m.getCategoria(), h.getCodiNome(), ((Jaegers) h).getNomePrimeiroPiloto(), ((Jaegers) h).getNomeSegundoPiloto()));
+                    "pilotos  %s e %s  será se estamos a salvo? \n\n O Combate começa entre o Monstro e o Jaeger ", m.getCategoria(), h.getCodiNome(), ((Jaegers) h).getNomePrimeiroPiloto(), ((Jaegers) h).getNomeSegundoPiloto()));
             if (h.getForca() > m.getForca()) {
                 System.out.println(String.format("\n Oh a força do Jaeger  %s está muito acima da força do monstro sera se o embate vai terminar?", h.getCodiNome()));
                 if ((h.getPoder() + h.getForca()) > (m.getForca() + m.getFuria())) {
@@ -163,7 +163,7 @@ public class ConfrontoController {
                         System.out.println(String.format("\n O Monstro %s levou a melhor o Jaeger %s está destruido! sentiremos falta de voces %s e %s", m.getNome(), h.getCodiNome(),((Jaegers) h).getNomePrimeiroPiloto(),((Jaegers) h).getNomePrimeiroPiloto()));
                     }
                 } else {
-                    System.out.println(String.format("\n O Heroi está caido sera o fim?"));
+                    System.out.println(String.format("\n O Jaeger está caido sera o fim?"));
                     if ((h.getForca() + h.getPoder()) > m.getAwakened()) {
                         System.out.println(  String.format("\n Estamos a salvo o Jaeger %s com os pilotos %s %s venceu o Monstro terrivel", h.getCodiNome(),((Jaegers) h).getNomePrimeiroPiloto(),((Jaegers) h).getNomeSegundoPiloto()));
                     } else {
